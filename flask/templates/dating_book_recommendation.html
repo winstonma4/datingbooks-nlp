@@ -1,0 +1,155 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<style>
+
+h2 {
+  font-family: Optima;
+  text-align: center;
+  font-style: bold;
+  font-size: 40px;
+}
+
+h3 {
+  font-family: Optima;
+  text-align: center;
+  font-style: bold;
+  font-size: 40px;
+  color: #ff6663;
+}
+
+div.gallery {
+  border: 1px solid #000;
+}
+
+div.gallery:hover {
+  border: 3px solid #ff6663;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  font-family: Optima;
+  padding: 15px;
+  text-align: center;
+  font-style: bold;
+  font-size: 30px;
+
+}
+
+body {
+  font-family: Optima;
+  text-align: center;
+  font-style: bold;
+  box-sizing: border-box;
+  background-image: url('../images/heart2.png');
+  background-size: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-size:20px;
+}
+
+.responsive {
+  padding: 0 6px;
+  float: left;
+  width: 23%;
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+</head>
+
+<body>
+
+<h2>Here are the recommended books for your topics:</h2>
+<h3>{% for topic in topic_names %} 
+    | {{ topic }} |    
+    {% endfor %}
+</h3>
+<h4>Click to purchase on Amazon!
+<br>
+<a id="book6_link" target="_self" href="/dating_book_home">
+    Change Preferences</a>
+</h4>
+
+<div class="responsive">
+  <div class="gallery">
+    <a id="book1_link" target="_blank" href="">
+      <img id="book1_img" src="" alt="Cinque Terre" width="600" height="400">
+    </a>
+    <div class="desc" id="desc1">Add a description of the image here</div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a id="book2_link" target="_blank" href="">
+      <img id="book2_img" src="" alt="Forest" width="600" height="400">
+    </a>
+    <div class="desc" id="desc2">Add a description of the image here</div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a id="book3_link" target="_blank" href="">
+      <img id="book3_img" src="" alt="Northern Lights" width="600" height="400">
+    </a>
+    <div class="desc" id="desc3">Add a description of the image here</div>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+    <a id="book4_link" target="_blank" href="">
+      <img id="book4_img" src="" alt="Northern Lights" width="600" height="400">
+    </a>
+    <div class="desc" id="desc4">Add a description of the image here</div>
+  </div>
+</div>
+
+<div style="padding:6px;">
+
+  
+
+</div>
+
+<script>
+$('#book1_link').attr('href', "{{ purchase_urls[0] }}");
+$('#book1_img').attr('src', "{{ picture_urls[0] }}");
+$('#book2_link').attr('href', "{{ purchase_urls[1] }}");
+$('#book2_img').attr('src', "{{ picture_urls[1] }}");
+$('#book3_link').attr('href', "{{ purchase_urls[2] }}");
+$('#book3_img').attr('src', "{{ picture_urls[2] }}");
+$('#book4_link').attr('href', "{{ purchase_urls[3] }}");
+$('#book4_img').attr('src', "{{ picture_urls[3] }}");
+
+$('#desc1').html("<b>{{ percentages[0] }}%</b> match ")
+$('#desc2').html("<b>{{ percentages[1] }}%</b> match ")
+$('#desc3').html("<b>{{ percentages[2] }}%</b> match ")
+$('#desc4').html("<b>{{ percentages[3] }}%</b> match ")
+</script>
+
+
+</body>
+</html>

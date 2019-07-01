@@ -1,0 +1,125 @@
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<style>
+
+body {
+  background-image: url('../images/heart2.png');
+  background-size: auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: Optima;
+  text-align: left;
+  font-style: bold;
+  box-sizing: border-box;
+  font-size: 28px;
+  font-style:bold;
+  color:black;
+}
+
+h1 {
+  font-family: Optima;
+  text-align: center;
+  font-style: bold;
+  box-sizing: border-box;
+  font-size: 45px;
+  color:black;
+}
+.grid li {
+  display: block;
+  float: left;
+  width: 33%;
+}
+
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 16px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 2px 2px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  display: block;
+  margin: 0 auto;
+}
+
+.button1 {
+  background-color: white; 
+  color: black; 
+  border: 2px solid #EC8381;
+}
+
+.button1:hover {
+  background-color: #EC8381;
+  color: white;
+}
+
+.submit-wrap{
+  width:50%;
+  text-align: center;
+  float: ;
+}
+
+</style>
+</head>
+<body>
+  <h1> Welcome to the Dating Book Recommender! </h1>
+<form action="/dating_book_recommendation">
+
+    <ul class='grid'>
+      <p><strong>Are you interested in books written by a specific gender?</strong></p>
+      <input type="radio" name="author_gender" value="male">Male<br>
+      <input type="radio" name="author_gender" value="female">Female<br>
+      <input type="radio" name="author_gender" value=0>Don't Care<br>
+    </ul>
+
+    <ul class='grid'>
+      <p><strong>Are you interested in books aimed toward a specific gender?</strong></p>
+      <input type="radio" name="audience" value="men">Male<br>
+      <input type="radio" name="audience" value="women">Female<br>
+      <input type="radio" name="audience" value="unisex">Don't Care<br>
+    </ul>
+
+    
+    <ul class="grid">
+      <p><strong>Which topics are you interested in? (Choose up to 3)</strong></p>
+      <li><input type="checkbox" name="topic_5" value=1>Attractive Behavior</li>
+      <li><input type="checkbox" name="topic_3" value=1>Behavioral Psychology</li>
+      <li><input type="checkbox" name="topic_17" value=1>Being Alpha</li>
+      <li><input type="checkbox" name="topic_2" value=1>Boundaries</li>
+      <li><input type="checkbox" name="topic_10" value=1>Communication Styles</li>
+      <li><input type="checkbox" name="topic_12" value=1>Dreaming Big</li>
+      <li><input type="checkbox" name="topic_15" value=1>Family</li>
+      <li><input type="checkbox" name="topic_9" value=1>Flirting and Escalation</li>
+      <li><input type="checkbox" name="topic_11" value=1>Heartbreak</li>
+      <li><input type="checkbox" name="topic_1" value=1>Intial Contact</li>      
+      <li><input type="checkbox" name="topic_4" value=1>Life Appreciation</li>
+      <li><input type="checkbox" name="topic_0" value=1>Long-Term Commitment</li>
+      <li><input type="checkbox" name="topic_7" value=1>Meeting People</li>
+      <li><input type="checkbox" name="topic_8" value=1>Online Dating</li>
+      <li><input type="checkbox" name="topic_16" value=1>Personality Types</li>
+      <li><input type="checkbox" name="topic_6" value=1>Phases of Dating</li>
+      <li><input type="checkbox" name="topic_14" value=1>Primal Instincts</li>
+      <li><input type="checkbox" name="topic_13" value=1>Science of Seduction</li>
+    </ul>
+
+    <div class="submit-wrap">
+      <br><br>
+      <button class="button button1" input type="submit" method="get">Recommend Books!</button>
+    </div>
+    
+</form>
+</body>
+<script type="text/javascript">
+var limit = 3;
+$('input[type="checkbox"]').on('change', function(evt) {
+   if($('input[type="checkbox"]:checked').length > limit) {
+       this.checked = false;
+   }
+});
+</script>
+</html>
