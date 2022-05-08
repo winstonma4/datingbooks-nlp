@@ -1,2 +1,2 @@
 # datingbooks-nlp
-Analysis of dating books using natural language processing
+The purpose of this project was to use natural language processing in order to analyze whether men and women think differently about dating and relationships. 74 books were scraped, split into documents of 20 sentences each, and then vectorized using TD-IDF. These document vectors were then processed using a non-negative matrix factorization model in order to arrive at 18 different topics.
